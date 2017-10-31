@@ -6,10 +6,10 @@
 carpentry: "swc"
 
 # Overall title for pages.
-title: "Lesson Title"
+title: "Ansible Training 2017"
 
 # Contact email address.
-contact: "mailto:lessons@software-carpentry.org"
+contact: "mailto:ome-devel@lists.openmicroscopy.org.uk"
 
 #------------------------------------------------------------
 # Constant URL addresses across lessons
@@ -22,15 +22,15 @@ swc_github: "https://github.com/swcarpentry"
 swc_site: "https://software-carpentry.org"
 swc_pages: "https://swcarpentry.github.io"
 template_repo: "https://github.com/swcarpentry/styles"
-example_repo: "https://github.com/swcarpentry/lesson-example"
+example_repo: "https://github.com/kennethgillen/ome-ansible-training"
 example_site: "https://swcarpentry.github.com/lesson-example"
-workshop_repo: "https://github.com/swcarpentry/workshop-template"
-workshop_site: "https://swcarpentry.github.io/workshop-template"
-training_site: "https://swcarpentry.github.io/instructor-training"
+workshop_repo: 
+workshop_site: 
+training_site: 
 
 # Surveys.
-pre_survey: "https://www.surveymonkey.com/r/swc_pre_workshop_v1?workshop_id="
-post_survey: "https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_id="
+pre_survey: 
+post_survey:
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
@@ -41,10 +41,10 @@ kind: "lesson"
 
 # Magic to make URLs resolve both locally and on GitHub.
 # See https://help.github.com/articles/repository-metadata-on-github-pages/.
-repository: <USERNAME>/<PROJECT>
+repository: kennethgillen/ome-ansible-training
 
 # Start time in minutes (0 to be clock-independent, 540 to show a start at 09:00 am)
-start_time: 0
+start_time: 845
 
 # Specify that things in the episodes collection should be output.
 collections:
@@ -70,4 +70,4 @@ exclude:
   - bin
 
 # Turn off built-in syntax highlighting.
-highlighter: false
+highlighter: true
