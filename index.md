@@ -3,17 +3,11 @@ layout: lesson
 root: .
 ---
 
-This lesson shows how to use the
-[Software Carpentry]({{ site.swc_site }}) and
-[Data Carpentry]({{ site.dc_site }}) lesson template.
-For guidelines on how to help improve our lessons and this template,
-please see [the contribution guidelines][contributing];
-for guidelines on how to set up your machine to preview changes locally,
-please see [the setup instructions]({{ page.root }}/setup/).
+[The initial (internal) G.Doc](https://docs.google.com/document/d/1YDueOUkEM7ANnLSJmw50lFW-zF7ngbGrPt2tDZgM14Y/edit#). 
 
 > ## Prerequisites
 >
-> Use the `.prereq` style to specify prerequisites.
+> Please follow [the setup instructions]({{ page.root }}/setup/) in advance of the session.
 {: .prereq}
 
 > ## Ten Things You Need To Know
