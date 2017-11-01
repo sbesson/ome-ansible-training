@@ -6,7 +6,7 @@
 carpentry: "swc"
 
 # Overall title for pages.
-title: "Ansible Training 2017"
+title: "OME Ansible Training 2017"
 
 # Contact email address.
 contact: "mailto:ome-devel@lists.openmicroscopy.org.uk"
@@ -24,9 +24,9 @@ swc_pages: "https://swcarpentry.github.io"
 template_repo: "https://github.com/swcarpentry/styles"
 example_repo: "https://github.com/kennethgillen/ome-ansible-training"
 example_site: "https://swcarpentry.github.com/lesson-example"
-workshop_repo: 
-workshop_site: 
-training_site: 
+workshop_repo: "https://www.openmicroscopy.org"
+workshop_site: "https://www.openmicroscopy.org"
+training_site: "https://www.openmicroscopy.org"
 
 # Surveys.
 pre_survey: 
@@ -71,3 +71,4 @@ exclude:
 
 # Turn off built-in syntax highlighting.
 highlighter: rouge
+
