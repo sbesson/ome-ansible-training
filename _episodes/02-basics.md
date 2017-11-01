@@ -3,10 +3,8 @@ title: "Trying it out"
 teaching: 10
 exercises: 0
 questions:
-- "How are pages published?"
 objectives:
-- "Explain how GitHub Pages produce web sites from Git repositories."
-- "Explain Jekyll's formatting rules."
+- "Have used basic Ansible code"
 keypoints:
 - "Lessons are stored in Git repositories on GitHub."
 - "Lessons are written in Markdown."

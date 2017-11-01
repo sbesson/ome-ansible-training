@@ -14,11 +14,11 @@ Here we're going to execute one of those examples.
 
 > ## Don't worry!
 >
-> Most of the following commands include some BASH substitutions to simplify connecting to a Vagrant VM on different machines. It's really not as complicated as this makes it look.
+> Most of the following commands include some BASH substitutions to simplify connecting to a Vagrant VM from different machines. It's really not as complicated as this makes it look.
 >
 {: .callout}
 
-1 Acquire a copy of the examples:
+1 Acquire a copy of the examples (you may have done this already):
 
 ~~~
 Git clone https://github.com/ome/ansible-examples-omero
