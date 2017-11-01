@@ -25,14 +25,25 @@ Git clone https://github.com/ome/ansible-examples-omero
 ~~~
 {: .bash} 
 
-Kenny-note
-NB - we can update that Vagrantfile to remove the ansible provisioning if we don't want the magic for the training session.
-
-Update the vagrantfile
-~~~
-cd ansible-examples-omero && rm Vagrantfile && wget https://gist.githubusercontent.com/kennethgillen/648105ba0f78440ca41e45963c471744/raw/b6e312f72715102d5a53330d41c0c0707ad7b742/Vagrantfile
+Change directory to the clone of ansible-examples-omero
+~
+cd ansible-examples-omero/public 
 ~~~
 {: .bash} 
+
+Update the vagrantfile (possibly do a manual edit?)
+~~~
+rm Vagrantfile && wget https://gist.githubusercontent.com/kennethgillen/648105ba0f78440ca41e45963c471744/raw/c6e05535bb20ce08e515d0a10615406838728291/Vagrantfile
+~~~
+{: .bash} 
+
+To Explain
+(Takes 30s..)
+~~~
+vagrant up
+~~~
+{: .bash} 
+
 
 Create a hosts file:
 ~~~
@@ -51,31 +62,30 @@ localhost ansible_port=2222 ansible_user=vagrant
 {: .output}
 
 
-Question: do we want to "magic" of the vagrantfile provisionsing? I don't think so.
-How 'expensive' is it to get the ansible-ssh-key from vagrant?
-
-vagrant ssh-config
-
-(30s)
-~~~
-vagrant up
-~~~
-{: .bash} 
-
-~~~
-echo $(vagrant ssh-config | grep Port | awk '{print $2}')
-~~~
-{: .bash} 
-
-~~~
-echo ${vagrant ssh-config | grep IdentityFile | awk '{print $2}'}
-~~~
-{: .bash} 
-
-~~~
-ssh -p $(vagrant ssh-config | grep Port | awk '{print $2}') -i $(vagrant ssh-config | grep IdentityFile | awk '{print $2}') -o StrictHostKeyChecking=no vagrant@localhost
-~~~
-{: .bash} 
+> ## Asking Vagrant how to connect to the virtual machine
+> 
+> Vagrant takes care of running >1 machine at once by 
+> assigning the VMs different port numbers for SSH for example.
+> We can ask vagrant the SSH port of the current machine, which we
+> need to give to the ansible-playbook command, via the host file.
+> See [docs.ansible.com](http://docs.ansible.com/ansible/latest/intro_inventory.html) 
+> for more. These shell snippets acheive the function of asking vagrant for these details.
+>
+<br/>
+>What port is the current Vagrant VM using for SSH?
+>~~~
+>echo $(vagrant ssh-config | grep Port | awk '{print $2}')
+>~~~
+>{: .bash} 
+>
+>
+<br/>
+>Where is the SSH key used to connect to the current Vagrant VM's `vagrant` user?
+>~~~
+>echo ${vagrant ssh-config | grep IdentityFile | awk '{print $2}'}
+>~~~
+>{: .bash} 
+{: .solution}
 
 Verify it's working:
 ~~~
@@ -85,12 +95,18 @@ ansible -i hosts-file -m ping localhost --private-key  $(vagrant ssh-config | gr
 
 >## Seeing ssh errors?
 >
+>If you've an `~/.ssh/known_hosts` entry for `localhost` then this new 
+>VM is likely to conflict. You will have to delete the existing entry 
+>with the corresponding line number in the output from Ansible.
+>This can be done manually, or with the following snippets:
 >~~~
->problem_line=$(ansible -i hosts-file -m ping localhost   | grep -oP '(?<=hosts:)\d+')
->sed -i.bak -e "${problem_line}d" ~/.ssh/known_hosts
+># Looking in the output for known_hosts:line-number
+>echo $(ansible -i hosts-file -m ping localhost --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}')  | grep -oP '(?<=hosts:)\d+')
+># Use sed to delete that line. Replace "LINENUMBER" with the line number from the output above.
+>sed -i.bak -e "LINENUMBERd" ~/.ssh/known_hosts
 >~~~
 >{: .bash} 
->
+> Next time you run the `ansible -m ping` command, you'll be asked whether you trust the host key is correct. Type `yes` to continue.
 {: .solution}
 
 ~~~
