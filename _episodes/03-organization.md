@@ -10,20 +10,93 @@ keypoints:
 ---
 OME have published (and maintain) a set of example playbooks.
 
+Here we're going to execute one of those examples.
+
+> ## Don't worry!
+>
+> Most of the following commands include some BASH substitutions to simplify connecting to a Vagrant VM on different machines. It's really not as complicated as this makes it look.
+>
+{: .callout}
+
 1 Acquire a copy of the examples:
 
 ~~~
 Git clone https://github.com/ome/ansible-examples-omero
 ~~~
-{: .source} 
+{: .bash} 
+
+Kenny-note
+NB - we can update that Vagrantfile to remove the ansible provisioning if we don't want the magic for the training session.
+
+Update the vagrantfile
+~~~
+cd ansible-examples-omero && rm Vagrantfile && wget https://gist.githubusercontent.com/kennethgillen/648105ba0f78440ca41e45963c471744/raw/b6e312f72715102d5a53330d41c0c0707ad7b742/Vagrantfile
+~~~
+{: .bash} 
+
+Create a hosts file:
+~~~
+echo "localhost ansible_port=$(vagrant ssh-config | grep Port | awk '{print $2}') ansible_user=vagrant " > hosts-file
+~~~
+{: .bash}
+
+It should look similar to:
+~~~
+cat hosts-file
+~~~
+{: .bash}
+~~~
+localhost ansible_port=2222 ansible_user=vagrant
+~~~
+{: .output}
 
 
-Create a vagrantfile
+Question: do we want to "magic" of the vagrantfile provisionsing? I don't think so.
+How 'expensive' is it to get the ansible-ssh-key from vagrant?
 
+vagrant ssh-config
+
+(30s)
 ~~~
 vagrant up
 ~~~
-{: .source} 
+{: .bash} 
+
+~~~
+echo $(vagrant ssh-config | grep Port | awk '{print $2}')
+~~~
+{: .bash} 
+
+~~~
+echo ${vagrant ssh-config | grep IdentityFile | awk '{print $2}'}
+~~~
+{: .bash} 
+
+~~~
+ssh -p $(vagrant ssh-config | grep Port | awk '{print $2}') -i $(vagrant ssh-config | grep IdentityFile | awk '{print $2}') -o StrictHostKeyChecking=no vagrant@localhost
+~~~
+{: .bash} 
+
+Verify it's working:
+~~~
+ansible -i hosts-file -m ping localhost --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}')
+~~~
+{: .bash}
+
+>## Seeing ssh errors?
+>
+>~~~
+>problem_line=$(ansible -i hosts-file -m ping localhost   | grep -oP '(?<=hosts:)\d+')
+>sed -i.bak -e "${problem_line}d" ~/.ssh/known_hosts
+>~~~
+>{: .bash} 
+>
+{: .solution}
+
+~~~
+ansible-playbook -i hosts-file --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}') --become  playbook.yml
+~~~
+{: .bash}
 
 The README.md explains what we need to do:
 

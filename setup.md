@@ -40,7 +40,7 @@ Run (in any directory):
 ~~~
 vagrant box add centos/7
 ~~~
-{: .source}
+{: .bash}
 
 When prompted, pick `virtualbox`
 
@@ -49,7 +49,7 @@ Confirm the `box` was installed with:
 ~~~
 vagrant box list | grep centos/7
 ~~~
-{: .source}
+{: .bash}
 
 output:
 ~~~

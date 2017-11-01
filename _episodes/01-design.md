@@ -2,8 +2,6 @@
 title: "What on earth is it?"
 teaching: 10
 exercises: 0
-questions:
-- "What on earth is Ansible?"
 objectives:
 - "Describe the reverse instructional design process."
 - "Describe the purpose and implementation of formative assessments."
@@ -15,31 +13,12 @@ This episode describes how we go about designing lessons and why.
 For more information on how we design lessons and why,
 see [the instructor training course][training].
 
-## Reverse Instructional Design
+## Basics
 
-In principle,
-we design lessons in four stages:
+iasdf asdf as
 
-1.  **Conceptual**:
-    describe who the lesson is for,
-    what its overall goals are,
-    and how long it is going to be.
-    For example,
-    the lesson might be for people who have taught themselves
-    how to write page-long statistical analyses in R using RStudio,
-    but have never written functions or run programs from the Unix shell prompt.
-    Its overall goal might be to teach them how to write modular multi-page programs
-    and how to use dplyr to regularize their analyses,
-    and the time allotted might be half a day.
-    It's often helpful to use [concept maps][concept-maps] in this stage.
+1.  thing
 
-2.  **Summative Assessment**:
-    figure out what learners will do to demonstrate that they have mastered the material.
-    This is the most important step of the four,
-    since it is what *actually* determines the scope of the lesson.
-    In this case,
-    the summative assessment might be to write a four-function program
-    to load, clean up, analyze, and plot a collection of medical data sets.
 
 3.  **Formative Assessments**:
     describe the exercises that learners will do during the lesson.
@@ -85,9 +64,6 @@ In practice, the process often looks more like this:
 
 7.  Start writing the lesson content.
 
-Steps 1-6 are best done in a single Markdown file for easy review;
-if you are using this template,
-you should call it `_extras/design.md`.
 Once work starts on step 7,
 the detailed milestones should be moved into lesson episode files.
 For an example of this,
