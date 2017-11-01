@@ -1,18 +1,31 @@
 ---
-title: "Lesson Organization"
+title: "Creating an OMERO server"
 teaching: 10
 exercises: 0
-questions:
-- "How are the files in a lesson organized?"
 objectives:
-- "Explain overall organization of lesson files."
+- "Experience the installation of an OMERO server via Ansible"
 keypoints:
-- "Auxiliary files are stored in the _layouts, _includes, and assets directories."
-- "The code of conduct, license, Makefile, and contribution guidelines should not be modified."
-- "The README, authors' list, and citation instructions must be updated for each lesson."
-- "The home page, reference guide, setup instructions, discussion page, and instructors' guide must be updated for each lesson."
-- "The Makefile stores commonly-used commands."
+- "Vagrantfile defines your VM"
+- "OME publish example playbooks"
 ---
+OME have published (and maintain) a set of example playbooks.
+
+1 Acquire a copy of the examples:
+
+~~~
+Git clone https://github.com/ome/ansible-examples-omero
+~~~
+{: .source} 
+
+
+Create a vagrantfile
+
+~~~
+vagrant up
+~~~
+{: .source} 
+
+The README.md explains what we need to do:
 
 Each lesson is made up of *episodes* that are 10-30 minutes long
 (including time for both teaching and exercises).

@@ -1,9 +1,9 @@
 ---
-title: "Lesson Design"
+title: "What on earth is it?"
 teaching: 10
 exercises: 0
 questions:
-- "How do we design lessons?"
+- "What on earth is Ansible?"
 objectives:
 - "Describe the reverse instructional design process."
 - "Describe the purpose and implementation of formative assessments."
