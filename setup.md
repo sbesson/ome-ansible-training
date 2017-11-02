@@ -23,6 +23,16 @@ To follow along, you'll need the following:
 
 ### Installing the requirements
 
+Shell commands and output are shown as follows:
+~~~
+example command
+~~~
+{: .bash}
+~~~
+example output
+~~~
+{: .output}
+
 ### Ansible
 The installation instructions for all platforms are at [docs.ansible.com](http://docs.ansible.com/ansible/latest/intro_installation.html). 
 
@@ -80,7 +90,7 @@ vagrant box add centos/7 # When prompted, choose 3 `virtualbox`
 
     Enter your choice: 3
 ~~~
-{: .bash}
+{: .output}
 ~~~
 ==> box: Adding box 'centos/7' (v1710.01) for provider: virtualbox
     box: Downloading: https://vagrantcloud.com/centos/boxes/7/versions/1710.01/providers/virtualbox.box
