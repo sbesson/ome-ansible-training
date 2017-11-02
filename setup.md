@@ -41,6 +41,15 @@ localhost | SUCCESS => {
 ~~~
 {: .output}
 
+### Ansible Source and related files
+
+Make git clones of the following repositories, in your favourite clones directory, e.g. ~/clones/.
+
+* [github.com/ome/ansible-examples-omero](https://github.com/ome/ansible-examples-omero)
+* [github.com/openmicroscopy/managment_tools](https://github.com/openmicroscopy/management_tools)
+
+
+
 ### VirtualBox 
 A lightweight method of running virtual machines on your desktop/laptop. Follow the graphical installer you can download from [virtualbox.org](https://www.virtualbox.org/wiki/Downloads). Once that completes, VirtualBox should be ready to use.
 
@@ -54,14 +63,33 @@ This is a tool which can automate the configuration of local virtual machines, i
 
 Run (in any directory):
 ~~~
-vagrant box add centos/7
+vagrant box add centos/7 # When prompted, choose 3 `virtualbox` 
 ~~~
 {: .bash}
+~~~
+==> box: Loading metadata for box 'centos/7'
+    box: URL: https://vagrantcloud.com/centos/7
+    This box can work with multiple providers! The providers that it
+    can work with are listed below. Please review the list and choose
+    the provider you will be working with.
 
-When prompted, pick `virtualbox`
+    1) hyperv
+    2) libvirt
+    3) virtualbox
+    4) vmware_desktop
+
+    Enter your choice: 3
+~~~
+{: .bash}
+~~~
+==> box: Adding box 'centos/7' (v1710.01) for provider: virtualbox
+    box: Downloading: https://vagrantcloud.com/centos/boxes/7/versions/1710.01/providers/virtualbox.box
+        box: Progress: 24% (Rate: 9.9M/s, Estimated time remaining: 0:00:27)
+==> box: Successfully added box 'centos/7' (v1710.01) for 'virtualbox'!
+~~~
+{: .output}
 
 Confirm the `box` was installed with:
-
 ~~~
 vagrant box list | grep centos/7
 ~~~
@@ -70,14 +98,6 @@ vagrant box list | grep centos/7
 centos/7         (virtualbox, 1710.01)
 ~~~
 {: .output}
-
-### Ansible Source and related files
-
-Make git clones of the following repositories, in your favourite clones directory, e.g. ~/git-clones/.
-
-* [github.com/ome/ansible-examples-omero](https://github.com/ome/ansible-examples-omero)
-* [github.com/openmicroscopy/managment_tools](https://github.com/openmicroscopy/management_tools)
-
 
 > ## Problems getting set up?
 >

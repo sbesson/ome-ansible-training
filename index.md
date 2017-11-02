@@ -10,7 +10,7 @@ root: .
 > Please follow [the setup instructions]({{ page.root }}/setup/) in advance of the session.
 {: .prereq}
 
-> ## Two Things You Need To Know
+> ## Three Things You Need To Know
 >
 > 0.  Don't panic.
 > 1.  Using Ansible is easier than you think*.
