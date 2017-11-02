@@ -26,7 +26,7 @@ Git clone https://github.com/ome/ansible-examples-omero
 {: .bash} 
 
 Change directory to the clone of ansible-examples-omero
-~
+~~~
 cd ansible-examples-omero/public 
 ~~~
 {: .bash} 
