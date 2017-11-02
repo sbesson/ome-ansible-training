@@ -21,7 +21,7 @@ We'll start by touching on some absolute basics.
 ### Ansible
 
 * like ssh, but on can run against >1 server.
-* agentless
+* agent-less
 
 1. Ping
 

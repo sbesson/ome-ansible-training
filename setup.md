@@ -4,9 +4,9 @@ title: Setup
 permalink: /setup/
 ---
 
-#### This training session is in the form of a follow-along workshop.
+#### This training session is in the form of an instructor-led workshop.
 
-To follow along, you'll need the following:
+To follow along, you'll need the some prerequisites:
 
 #### Hardware Requirements:
 * 1.5GB ram free
