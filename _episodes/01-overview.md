@@ -6,39 +6,33 @@ objectives:
 - "Learn "
 keypoints:
 - "What is Ansible"
-- "What are inventory files"
+- "What is Ansible inventory"
 - "Where does Vagrant fit in?"
 ---
 
-This episode describes how we go about designing lessons and why.
-For more information on how we design lessons and why,
-see [the instructor training course][training].
+We'll start by touching on some absolute basics.
 
-## Basics
+## Basics to Cover
 
-Ansible
-Inventory file
-Vagrant
+* Ansible
+* Inventory file
+* Vagrant
 
 ### Ansible
 
 * like ssh, but on can run against >1 server.
 * agentless
 
-2.  
-    "back up" and "parallel park between some safety cones".
+1. Ping
 
-3.  **Connect the Dots**:
-    put the formative assessments in order
+1. Setup
 
-6.  svg
+1. Inventory / Host File
+  <img src="{{ page.root }}/fig/diag-0x.svg" width="400" height="400"/>
 
-<img src="{{ page.root }}/fig/diag-0x.svg" width="400" height="400"/>
+1.  svg - max width
 
-7.  svg - max width
+  <img src="{{ page.root }}/fig/diag-0x.svg" max-width="400"/>
 
-<img src="{{ page.root }}/fig/diag-0x.svg" max-width="400"/>
-
-## What Makes a Good Formative Assessment
 
 {% include links.md %}
