@@ -27,25 +27,21 @@ $ git clone git@github.com:ome/ansible-examples-omero.git
 ~~~
 {: .bash} 
 
-
-
-Change directory to the 'public' example in the clone of ansible-examples-omero
-~~~
-$ cd ansible-examples-omero
-$ ansible-galaxy install -r requirements.yml -p roles
-~~~
-{: .bash} 
-
-
-Change directory to the 'public' example in the clone of ansible-examples-omero
+Change directory to the 'public-user' example in the clone of ansible-examples-omero
 ~~~
 $ cd ansible-examples-omero/public 
 ~~~
 {: .bash} 
 
+Install the prerequisite roles, defined in requirements.yml
+~~~
+$ ansible-galaxy install -r ../requirements.yml -p roles
+~~~
+{: .bash}
+
 Add some port forwarding to the Vagrantfile, to allow us to connect to OMERO.
 ~~~
-$ rm Vagrantfile && wget https://gist.githubusercontent.com/kennethgillen/648105ba0f78440ca41e45963c471744/raw/c6e05535bb20ce08e515d0a10615406838728291/Vagrantfile
+$ rm Vagrantfile && wget https://gist.github.com/kennethgillen/648105ba0f78440ca41e45963c471744/raw/Vagrantfile
 ~~~
 {: .bash} 
 
@@ -57,6 +53,8 @@ $ rm Vagrantfile && wget https://gist.githubusercontent.com/kennethgillen/648105
 >  config.vm.provider "virtualbox" do |vb|
 >  config.vm.network "forwarded_port", guest: 80, host: 8080
 >  config.vm.network "forwarded_port", guest: 443, host: 8443
+>  config.vm.network "forwarded_port", guest: 4063, host: 4063
+>  config.vm.network "forwarded_port", guest: 4064, host: 4064
 >    vb.customize....
 >  ~~~
 >  {: .code}
@@ -133,11 +131,10 @@ ansible -i vagrant-inventory -m ping localhost --private-key  $(vagrant ssh-conf
 > Next time you run the `ansible -m ping` command, you'll be asked whether you trust the host key is correct. Type `yes` to continue.
 {: .solution}
 
+Putting it all together - running the 'public user' example playbook. Estimated 15m runtime.
 ~~~
 $ ansible-playbook -i vagrant-inventory --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}') --become  playbook.yml
 ~~~
 {: .bash}
-
-The README.md explains what we need to do:
 
 {% include links.md %}

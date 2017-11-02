@@ -5,8 +5,7 @@ permalink: /discuss/
 ---
 Readers may be interested in:
 
-*   PeerJ's [paper-now], which uses [Jekyll][jekyll] as a framework for writing scientific papers.
-*   The [Morea Framework][morea],
-    a more elaborate template for [Jekyll][jekyll]-based lessons.
+*  PeerJ's [paper-now], which uses [Jekyll][jekyll] as a framework for writing scientific papers://www.ansible.com/get-started 
+*  https://linuxacademy.com/devops/training/course/name/ansible-quick-start   
 
 {% include links.md %}

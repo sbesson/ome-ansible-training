@@ -25,7 +25,7 @@ To follow along, you'll need the some prerequisites:
 
 Shell commands and output are shown as follows:
 ~~~
-example command
+$ example command
 ~~~
 {: .bash}
 ~~~
@@ -40,7 +40,7 @@ OS X users: The Ansible project are currently recommending users install it via 
 
 You can test your install by running:
 ~~~
-ansible localhost -m ping
+$ ansible localhost -m ping
 ~~~
 {: .bash}
 ~~~
@@ -73,7 +73,7 @@ This is a tool which can automate the configuration of local virtual machines, i
 
 Run (in any directory):
 ~~~
-vagrant box add centos/7 # When prompted, choose 3 `virtualbox` 
+$ vagrant box add centos/7 # When prompted, choose 3 `virtualbox` 
 ~~~
 {: .bash}
 ~~~
@@ -101,7 +101,7 @@ vagrant box add centos/7 # When prompted, choose 3 `virtualbox`
 
 Confirm the `box` was installed with:
 ~~~
-vagrant box list | grep centos/7
+$ vagrant box list | grep centos/7
 ~~~
 {: .bash}
 ~~~
