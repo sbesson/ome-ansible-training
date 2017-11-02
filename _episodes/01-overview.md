@@ -17,51 +17,27 @@ see [the instructor training course][training].
 ## Basics
 
 Ansible
-Hosts
-Inventory
+Inventory file
 Vagrant
 
-1.  svg
+### Ansible
 
-<img src="{{ page.root }}/fig/diag-0x.svg" width="400" height="400"/>
+* like ssh, but on can run against >1 server.
+* agentless
 
-2.  png
-
-![Forking Repositories]({{ page.root }}/fig/diag-02.png)
-
-
-2.  **Formative Assessments**:
+2.  
     "back up" and "parallel park between some safety cones".
 
 3.  **Connect the Dots**:
     put the formative assessments in order
 
-In practice, the process often looks more like this:
+6.  svg
 
-1.  Draft the assumptions and major outcomes.
+<img src="{{ page.root }}/fig/diag-0x.svg" width="400" height="400"/>
 
-2.  Describe the summative assessments for each half day of material
-    (i.e., one summative assessment for a three-hour lesson and two for a full-day lesson).
+7.  svg - max width
 
-3.  Write a one- or two-line description of the formative assessments
-    building up to those summative assessments.
-    These should be paced at roughly 15-minute intervals,
-    i.e.,
-    four per hour.
-
-4.  Get early feedback from peers,
-    particularly on how realistic the time estimates are.
-
-5.  Do a second pass to flesh out the assumptions and assessments.
-
-6.  Get more feedback.
-
-7.  Start writing the lesson content.
-
-Once work starts on step 7,
-the detailed milestones should be moved into lesson episode files.
-For an example of this,
-see the [novice Python lesson using the gapminder data][python-gapminder].
+<img src="{{ page.root }}/fig/diag-0x.svg" max-width="400"/>
 
 ## What Makes a Good Formative Assessment
 
