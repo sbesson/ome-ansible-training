@@ -1,5 +1,5 @@
 ---
-title: "Formatting"
+title: "ome-public-example"
 teaching: 10
 exercises: 0
 questions:
