@@ -21,39 +21,63 @@ Here we're going to execute one of those examples.
 1 Acquire a copy of the examples (you may have done this already):
 
 ~~~
-Git clone https://github.com/ome/ansible-examples-omero
-~~~
-{: .bash} 
-
-Change directory to the clone of ansible-examples-omero
-~~~
-cd ansible-examples-omero/public 
-~~~
-{: .bash} 
-
-Update the vagrantfile (possibly do a manual edit?)
-~~~
-rm Vagrantfile && wget https://gist.githubusercontent.com/kennethgillen/648105ba0f78440ca41e45963c471744/raw/c6e05535bb20ce08e515d0a10615406838728291/Vagrantfile
-~~~
-{: .bash} 
-
-To Explain
-(Takes 30s..)
-~~~
-vagrant up
+$ git clone https://github.com/ome/ansible-examples-omero.git 
+# or
+$ git clone git@github.com:ome/ansible-examples-omero.git
 ~~~
 {: .bash} 
 
 
-Create a hosts file:
+
+Change directory to the 'public' example in the clone of ansible-examples-omero
 ~~~
-echo "localhost ansible_port=$(vagrant ssh-config | grep Port | awk '{print $2}') ansible_user=vagrant " > hosts-file
+$ cd ansible-examples-omero
+$ ansible-galaxy install -r requirements.yml -p roles
+~~~
+{: .bash} 
+
+
+Change directory to the 'public' example in the clone of ansible-examples-omero
+~~~
+$ cd ansible-examples-omero/public 
+~~~
+{: .bash} 
+
+Add some port forwarding to the Vagrantfile, to allow us to connect to OMERO.
+~~~
+$ rm Vagrantfile && wget https://gist.githubusercontent.com/kennethgillen/648105ba0f78440ca41e45963c471744/raw/c6e05535bb20ce08e515d0a10615406838728291/Vagrantfile
+~~~
+{: .bash} 
+
+> ## Want to manually edit the Vagrantfile instead?
+>
+>  We want to end up with the following:
+>  ...
+>  ~~~
+>  config.vm.provider "virtualbox" do |vb|
+>  config.vm.network "forwarded_port", guest: 80, host: 8080
+>  config.vm.network "forwarded_port", guest: 443, host: 8443
+>    vb.customize....
+>  ~~~
+>  {: .code}
+{: .callout}
+
+Tell Vagrant to kick off the creation of our VM (Takes 30s)
+~~~
+$ vagrant up
+~~~
+{: .bash} 
+
+
+Create an inventory file for the vagrant-driven local VM:
+~~~
+$ echo "localhost ansible_port=$(vagrant ssh-config | grep Port | awk '{print $2}') ansible_user=vagrant " > vagrant-inventory
 ~~~
 {: .bash}
 
 It should look similar to:
 ~~~
-cat hosts-file
+$ cat vagrant-inventory
 ~~~
 {: .bash}
 ~~~
@@ -74,7 +98,7 @@ localhost ansible_port=2222 ansible_user=vagrant
 <br/>
 >What port is the current Vagrant VM using for SSH?
 >~~~
->echo $(vagrant ssh-config | grep Port | awk '{print $2}')
+>$ echo $(vagrant ssh-config | grep Port | awk '{print $2}')
 >~~~
 >{: .bash} 
 >
@@ -82,14 +106,14 @@ localhost ansible_port=2222 ansible_user=vagrant
 <br/>
 >Where is the SSH key used to connect to the current Vagrant VM's `vagrant` user?
 >~~~
->echo ${vagrant ssh-config | grep IdentityFile | awk '{print $2}'}
+>$ echo $(vagrant ssh-config | grep IdentityFile | awk '{print $2}')
 >~~~
 >{: .bash} 
 {: .solution}
 
-Verify it's working:
+Verify Ansible can connect to the VM - the ping module again.
 ~~~
-ansible -i hosts-file -m ping localhost --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}')
+ansible -i vagrant-inventory -m ping localhost --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}')
 ~~~
 {: .bash}
 
@@ -101,16 +125,16 @@ ansible -i hosts-file -m ping localhost --private-key  $(vagrant ssh-config | gr
 >This can be done manually, or with the following snippets:
 >~~~
 ># Looking in the output for known_hosts:line-number
->echo $(ansible -i hosts-file -m ping localhost --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}')  | grep -oP '(?<=hosts:)\d+')
+>echo $(ansible -i vagrant-inventory -m ping localhost --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}')  | grep -oP '(?<=hosts:)\d+')
 ># Use sed to delete that line. Replace "LINENUMBER" with the line number from the output above.
->sed -i.bak -e "LINENUMBERd" ~/.ssh/known_hosts
+>$ sed -i.bak -e "LINENUMBERd" ~/.ssh/known_hosts
 >~~~
 >{: .bash} 
 > Next time you run the `ansible -m ping` command, you'll be asked whether you trust the host key is correct. Type `yes` to continue.
 {: .solution}
 
 ~~~
-ansible-playbook -i hosts-file --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}') --become  playbook.yml
+$ ansible-playbook -i vagrant-inventory --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}') --become  playbook.yml
 ~~~
 {: .bash}
 

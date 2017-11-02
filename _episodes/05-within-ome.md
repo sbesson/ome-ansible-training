@@ -7,7 +7,7 @@ objectives:
 keypoints:
 - "Inventory"
 - "prod-playbooks"
-- ""
+- "testing: travis (in Docker), molecule"
 ---
 
 

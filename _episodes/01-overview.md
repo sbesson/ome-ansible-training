@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-teaching: 25
+teaching: 10
 exercises: 0
 objectives:
 - "Learn "
@@ -20,6 +20,7 @@ We'll start by touching on some absolute basics.
 
 ### Ansible
 
+### 
 * like ssh, but on can run against >1 server.
 * agent-less
 
@@ -28,11 +29,10 @@ We'll start by touching on some absolute basics.
 1. Setup
 
 1. Inventory / Host File
-  <img src="{{ page.root }}/fig/diag-0x.svg" width="400" height="400"/>
 
-1.  svg - max width
+1.  svg 
 
-  <img src="{{ page.root }}/fig/diag-0x.svg" max-width="400"/>
+  <img src="{{ page.root }}/fig/diag-0x.svg" style="width:600px"/>
 
 1. ex
 
