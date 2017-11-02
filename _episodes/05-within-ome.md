@@ -1,5 +1,5 @@
 ---
-title: "Creating an OMERO server"
+title: "Ansible within OME"
 teaching: 25
 exercises: 0
 objectives:
@@ -14,6 +14,7 @@ OME have published (and maintain) a set of example playbooks.
 https://github.com/openmicroscopy/prod-playbooks/
   comprised of roles. Lots of roles. 
 
+<img src="../fig/gh-ansible-roles.png" title="Lots of roles" alt="Lots of roles" style="display: block; margin: auto;" />
 
 Here we're going to execute one of those examples.
 
