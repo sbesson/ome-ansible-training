@@ -34,5 +34,7 @@ We'll start by touching on some absolute basics.
 
   <img src="{{ page.root }}/fig/diag-0x.svg" max-width="400"/>
 
+1. ex
+
 
 {% include links.md %}
