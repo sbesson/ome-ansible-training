@@ -1,12 +1,13 @@
 ---
-title: "What on earth is it?"
-teaching: 10
+title: "Overview"
+teaching: 15
 exercises: 0
 objectives:
-- "Describe the reverse instructional design process."
-- "Describe the purpose and implementation of formative assessments."
+- "Learn "
 keypoints:
-- "Lessons are design in four stages: conceptual, summative, formative, and connective."
+- "What is Ansible"
+- "What are inventory files"
+- "Where does Vagrant fit in?"
 ---
 
 This episode describes how we go about designing lessons and why.
@@ -15,7 +16,10 @@ see [the instructor training course][training].
 
 ## Basics
 
-iasdf asdf as
+Ansible
+Hosts
+Inventory
+Vagrant
 
 1.  thing
 

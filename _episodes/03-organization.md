@@ -1,6 +1,6 @@
 ---
 title: "Creating an OMERO server"
-teaching: 10
+teaching: 25
 exercises: 0
 objectives:
 - "Experience the installation of an OMERO server via Ansible"

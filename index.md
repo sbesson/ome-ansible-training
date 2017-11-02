@@ -14,6 +14,7 @@ root: .
 >
 > 0.  Don't panic.
 > 1.  Using Ansible is easier than you think*.
+> 2.  The timings below are extremely approximate.
 {: .checklist}
 
 \* probably
