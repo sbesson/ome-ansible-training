@@ -29,7 +29,7 @@ $ git clone git@github.com:ome/ansible-examples-omero.git
 
 Change directory to the 'public-user' example in the clone of ansible-examples-omero
 ~~~
-$ cd ansible-examples-omero/public 
+$ cd ansible-examples-omero/public-user
 ~~~
 {: .bash} 
 
