@@ -1,18 +1,16 @@
 ---
-title: "Overview"
+title: "Overview of terms"
 teaching: 10
 exercises: 0
 objectives:
 - "Learn "
 keypoints:
-- "What is Ansible"
-- "What is Ansible inventory"
-- "Where does Vagrant fit in?"
+- "Ansible - configuration automation"
+- "Ansible inventory - our "
+- "Vagrant - drives local VM provider like VirtualBox"
 ---
 
-We'll start by touching on some absolute basics.
-
-## Basics to Cover
+We'll start with a rough overview of:
 
 * Ansible
 * Inventory file
@@ -20,11 +18,24 @@ We'll start by touching on some absolute basics.
 
 #### Ansible
 
-* like ssh, but on can run against >1 server.
-* agent-less
+* Like ssh, but on can run against >1 at once.
+* Agent-less
+* Human-readable (yaml) language to define state of a system
 
-#### Inventory
+#### Inventory (files)
+
+* List(s) of systems
+* Groups
 
 #### Vagrant
+
+* Takes care of the config and overhead of creating Virtual Machines
+* Vagrantfile
+* Test playbooks in a full vm rather than e.g. docker
+* For the purposes of this training: local vm
+
+#### Virtualbox
+
+* Lightweight Virtual Machine hypervisor
 
 {% include links.md %}
