@@ -21,6 +21,9 @@ To follow along, you'll need the some prerequisites:
 * [github.com/ome/ansible-examples-omero](https://github.com/ome/ansible-examples-omero)
 * [github.com/openmicroscopy/managment_tools](https://github.com/openmicroscopy/management_tools)
 
+#### Network Requirements:
+* Some steps will require the machine you're running Ansible from to be on the Life Sciences network, so locally connected or VPN.
+
 ### Installing the requirements
 
 Shell commands and output are shown as follows:

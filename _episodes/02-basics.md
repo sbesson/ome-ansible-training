@@ -68,16 +68,41 @@ $ ansible localhost -m setup | grep processor_cores
 
 #### 3. Inventory Files
 
-* must be able to ssh to the host
-* can specify ssh username and port number to use if they are different to your current O.S. username and standard :22
+Here's we'll create an inventory file for eel and cowfish 
 
-ssh-keyscan loop for eel and cowfish
+~~~
+$ mkdir ~/ansible-training && cd ~/ansible-training
+$ echo eel.openmicroscopy.org >> inventory-file
+$ echo cowfish.openmicroscopy.org >> inventory-file
+$ cat inventory-file
+~~~
+{: .bash}
+~~~
+eel.openmicroscopy.org
+cowfish.openmicroscopy.org
+~~~
+{: .output}
 
-create eel and cowfish inventory
+Rather than typing `yes` for every host, `ssh-keyscan` takes care of that.
+~~~
+$ cat inventory-file | grep -vP '[\[#]'  | grep -P '\.' | sort | uniq | while read h; do ssh-keyscan $h >> ~/.ssh/known_hosts; done
+~~~
+{: .bash}
 
-ansible all "/bin/echo hello"
+Trying your first ad-hoc command:
+~~~
+$ ansible all -i inventory-file -a "/bin/echo hello"
+~~~
+{: .bash}
 
 
-Further reading at [ansible.com - getting started] (http://docs.ansible.com/ansible/latest/intro_getting_started.html)
+A real-world example: nginx versions
+~~~
+$ ansible all -i inventory-file -m shell -a 'rpm -q nginx'
+~~~
+{: .bash}
+
+
+Further reading at [ansible.com - getting started](http://docs.ansible.com/ansible/latest/intro_getting_started.html)
 
 {% include links.md %}
