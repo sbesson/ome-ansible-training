@@ -1,6 +1,6 @@
 ---
 title: "Ansible within OME"
-teaching: 25
+teaching: 10
 exercises: 0
 objectives:
 - "Learn about Ansible use within OME"

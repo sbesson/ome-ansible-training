@@ -16,6 +16,11 @@ These simplify many tasks, but make other things more complicated.
 
 ## Trying it out
 
+Let's create a folder to get started.
+~~~
+$ mkdir ~/ansible-training && cd ~/ansible-training
+~~~
+{: .bash}
 
 #### 1. Module: Ping
 
@@ -71,7 +76,6 @@ $ ansible localhost -m setup | grep processor_cores
 Here's we'll create an inventory file for eel and cowfish 
 
 ~~~
-$ mkdir ~/ansible-training && cd ~/ansible-training
 $ echo eel.openmicroscopy.org >> inventory-file
 $ echo cowfish.openmicroscopy.org >> inventory-file
 $ cat inventory-file

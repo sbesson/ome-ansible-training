@@ -1,6 +1,6 @@
 ---
 title: "Playbooks and Roles"
-teaching: 20
+teaching: 5
 exercises: 0
 objectives:
 - "Exposure to playbooks"
