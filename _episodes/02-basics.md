@@ -93,7 +93,7 @@ $ cat inventory-file | grep -vP '[\[#]'  | grep -P '\.' | sort | uniq | while re
 ~~~
 {: .bash}
 
-Trying your first ad-hoc command:
+Trying your first [ad-hoc command](http://docs.ansible.com/ansible/latest/intro_adhoc.html):
 ~~~
 $ ansible all -i inventory-file -a "/bin/echo hello"
 ~~~
@@ -105,6 +105,7 @@ A real-world example: nginx versions
 $ ansible all -i inventory-file -m shell -a 'rpm -q nginx'
 ~~~
 {: .bash}
+
 
 
 Further reading at [ansible.com - getting started](http://docs.ansible.com/ansible/latest/intro_getting_started.html)
