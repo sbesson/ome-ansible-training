@@ -25,7 +25,22 @@ We'll start with a rough overview of:
 #### Inventory (files)
 
 * List(s) of systems
-* Groups
+* Groups systems together
+
+Looks like:
+
+~~~
+mail.openmicroscopy.org.uk
+
+[omero-servers]
+nightshade.openmicroscopy.org
+ome-demoserver.openmicroscopy.org
+
+[ci-servers]
+eel.openmicroscopy.org
+cowfish.openmicroscopy.org
+~~~
+{: .source}
 
 #### Vagrant
 
