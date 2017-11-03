@@ -18,23 +18,13 @@ We'll start by touching on some absolute basics.
 * Inventory file
 * Vagrant
 
-### Ansible
+#### Ansible
 
-### 
 * like ssh, but on can run against >1 server.
 * agent-less
 
-1. Ping
+#### Inventory
 
-1. Setup
-
-1. Inventory / Host File
-
-1.  svg 
-
-  <img src="{{ page.root }}/fig/diag-0x.svg" style="width:600px"/>
-
-1. ex
-
+#### Vagrant
 
 {% include links.md %}
