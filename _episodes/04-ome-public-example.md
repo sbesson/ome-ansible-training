@@ -115,7 +115,7 @@ localhost ansible_port=2222 ansible_user=vagrant
 
 Verify Ansible can connect to the VM - the setup module again.
 ~~~
-ansible -i inventory-file -m setup localhost --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}') | grep ansible_virtualization_type
+ansible -i inventory-file -m setup localhost --private-key  $(vagrant ssh-config | grep IdentityFile | awk '{print $2}') 
 ~~~
 {: .bash}
 Type `yes` when presented with the below: 
