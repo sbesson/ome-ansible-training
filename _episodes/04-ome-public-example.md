@@ -169,7 +169,7 @@ If this port was already taken when we issued `vagrant up`, [Vagrant should have
 auto-corrected and picked another port](https://www.vagrantup.com/docs/networking/forwarded_ports.html#auto_correct). We can ask for the current port mappings as follows:
 
 ~~~
-$ vagrant ports
+$ vagrant port
 ~~~
 {: .bash}
 ~~~
