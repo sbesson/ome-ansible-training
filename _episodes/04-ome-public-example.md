@@ -5,8 +5,9 @@ exercises: 0
 objectives:
 - "Experience the installation of an OMERO server via Ansible"
 keypoints:
-- "Vagrantfile defines your VM"
-- "OME publish example playbooks"
+- "OME publish example OMERO server playbooks"
+- "Vagrantfile defines your VM, including NAT port mappings"
+- "We can ask Vagrant about ports and ssh-keys at the CLI"
 ---
 OME have published (and maintain) a set of example playbooks which use the same roles OME use in production which will build an OMERO server.
 
